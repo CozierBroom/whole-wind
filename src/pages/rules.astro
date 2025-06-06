@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NavBar from "../components/NavBar.astro";
+---
+
+<BaseLayout title="Rules">
+  <main class="rules-main">
+    <h1>Server Rules</h1>
+    <p class="last-updated">Last updated: June 3, 2025</p>
+
+    <section>
+      <h2>Respect &amp; Community</h2>
+      <ol start="1">
+        <li><strong>Respect all players:</strong> Harassment, discrimination, or hate speech of any kind will not be tolerated.</li>
+        <li><strong>Have fun and be kind:</strong> This is a community – let's keep it welcoming for everyone.</li>
+        <li><strong>Follow staff instructions:</strong> Moderators and admins have the final say in all disputes and decisions.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Fair Play &amp; Cheating</h2>
+      <ol start="4">
+        <li><strong>No cheating or exploiting:</strong> Use of hacks, mods, or bugs to gain unfair advantages is strictly prohibited.</li>
+        <li><strong>No griefing:</strong> Destroying or stealing other players' builds without permission is forbidden.</li>
+        <li><strong>No real-money trading:</strong> Buying, selling, or trading in-game items or ranks for real money outside official store is banned.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Chat &amp; Communication</h2>
+      <ol start="7">
+        <li><strong>Keep chat appropriate:</strong> Use respectful language; no spamming, advertising, or excessive profanity.</li>
+        <li><strong>Stay on-topic in forums and chats:</strong> Use designated channels for off-topic discussions.</li>
+        <li><strong>Report bugs and issues:</strong> Help us improve by reporting problems to the staff promptly.</li>
+      </ol>
+    </section>
+  </main>
+  <style>
+    body {
+      background: #121821;
+      color: #ddd;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .rules-main {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background-color: #1b2430;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      border: 1px solid #2f3640;
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      color: #d49a2a;
+      font-weight: 700;
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-family: 'Cinzel', serif;
+      color: #d49a2a;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #d49a2a;
+      padding-bottom: 0.25rem;
+    }
+    .last-updated {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #bbb;
+      margin-bottom: 2rem;
+    }
+    ol {
+      padding: 0 1rem 1rem 1rem;
+      list-style: none;
+      counter-reset: rule;
+    }
+    ol li {
+      background-color: #222d3a;
+      margin-bottom: 1.2rem;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid #d49a2a;
+      color: #f0e6d2;
+      position: relative;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    ol li::before {
+      counter-increment: rule;
+      content: counter(rule);
+      position: absolute;
+      left: -2.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #d49a2a;
+      color: #121821;
+      font-weight: bold;
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: 0 0 5px #000;
+    }
+    ol li:hover {
+      background-color: #2a3650;
+      box-shadow: 0 0 10px #d49a2a;
+      cursor: default;
+    }
+    @media (max-width: 768px) {
+      .rules-main {
+        padding: 1rem 0.3rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      ol li {
+        padding: 0.8rem 0.7rem;
+      }
+      ol li::before {
+        left: -1.7rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</BaseLayout>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+---
+
+<BaseLayout title="About Us">
+  <main class="about-main">
+    <h1 class="about-title">About Our Minecraft Server</h1>
+    <section class="about-section">
+      <p>
+        Welcome to our Minecraft server! We are a community of passionate players who love to build, explore, and create together.
+      </p>
+      <p>
+        Our server offers a variety of game modes including survival, creative, and mini-games. Whether you're a seasoned player or new to Minecraft, there's something for everyone!
+      </p>
+    </section>
+    <section class="about-section">
+      <h2 class="about-section-title">Our Mission</h2>
+      <p>
+        We aim to provide a friendly and inclusive environment where players can enjoy the game, make friends, and express their creativity.
+      </p>
+    </section>
+    <section class="about-section">
+      <h2 class="about-section-title">Join Us</h2>
+      <p>
+        Ready to join the fun? Connect to our server at <strong>play.yourserver.com</strong> and become part of our community!
+      </p>
+    </section>
+  </main>
+  <style>
+    body {
+      background: #121821;
+    }
+    .about-main {
+      max-width: 800px;
+      margin: 2.5rem auto 0 auto;
+      padding: 2.5rem 1.5rem 2rem 1.5rem;
+      background: #232631;
+      border-radius: 16px;
+      box-shadow: 0 2px 24px #000a;
+    }
+    .about-title {
+      color: #d49a2a;
+      font-size: 2.7rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      letter-spacing: 1px;
+      font-family: 'Cinzel', serif;
+    }
+    .about-section {
+      margin-bottom: 2.5rem;
+    }
+    .about-section-title {
+      color: #d49a2a;
+      font-size: 1.3rem;
+      font-family: 'Cinzel', serif;
+      border-bottom: 2px solid #d49a2a;
+      padding-bottom: 0.2rem;
+      margin-bottom: 1.2rem;
+      text-align: left;
+      letter-spacing: 1px;
+    }
+    .about-section p {
+      color: #fff;
+      font-size: 1.08rem;
+      margin-bottom: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    @media (max-width: 600px) {
+      .about-main {
+        padding: 1rem 0.3rem;
+      }
+      .about-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</BaseLayout>

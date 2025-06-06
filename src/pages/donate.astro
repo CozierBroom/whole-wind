@@ -1,0 +1,128 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+const description = "Support our Minecraft server! Your donations help keep the server running and improve the community.";
+---
+
+<BaseLayout title="Donate" description={description}>
+  <main style="max-width: 600px; margin: 2rem auto; padding: 2rem; background: #181c24; border-radius: 8px; color: #fff;">
+    <!-- Branding -->
+    <h1 class="donate-title">Support the Server</h1>
+    <p style="text-align: center; color: #fffbe6; font-size: 1.1em;">
+      Running this server takes time and resources. Your donation helps cover hosting costs and keeps our community thriving.<br>
+      <strong>Thank you for your support!</strong>
+    </p>
+
+    <div class="donate-box">
+      <div class="donate-buttons" style="margin-top: 0;">
+        <a href="https://ko-fi.com/shatteredcrown" target="_blank" rel="noopener" class="donate-btn">
+          💖 Donate Now
+        </a>
+      </div>
+      <p style="color:#fffbe6; text-align:center; margin-top:1em;">
+        Every bit helps! If you have questions or want to donate another way, <a href="https://discord.gg/yourinvite" style="color:#bfa046;">contact us on Discord</a>.
+      </p>
+    </div>
+
+    <!-- 6. Contact Information -->
+    <section style="margin-top: 2rem;">
+      <h3 style="color: #bfa046;">Questions?</h3>
+      <p>Contact us on <a href="https://discord.gg/yourinvite" target="_blank" style="color: #bfa046;">Discord</a> or email <a href="mailto:admin@shatteredcrown.com" style="color: #bfa046;">admin@shatteredcrown.com</a>.</p>
+    </section>
+
+    <!-- 7. Thank You Message -->
+    <section style="margin-top: 2rem; background: #232733; padding: 1rem; border-radius: 4px;">
+      <strong style="color: #bfa046;">Thank you for supporting our community!</strong>
+    </section>
+  </main>
+
+  <style>
+    main {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #181c24;
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    .donate-title {
+      color: #bfa046;
+      font-family: inherit; /* Use the site's default font */
+      font-size: 2.6em;     /* Make it bigger */
+      text-align: center;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5em;
+      font-weight: bold;
+    }
+
+    h2, h3 {
+      color: #bfa046;
+    }
+
+    a {
+      color: #bfa046;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin: 2rem 0;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+
+    .thank-you {
+      margin-top: 2rem;
+      background: #232733;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+
+    .donate-box {
+      max-width: 500px;
+      margin: 2em auto;
+      background: #23273a;
+      border: 2px solid #bfa046;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px #000a 0.5;
+      padding: 2em 1.5em 1.5em 1.5em;
+      text-align: center;
+    }
+
+    .donate-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      margin: 0; /* Remove top margin to move button up */
+    }
+
+    .donate-btn {
+      background: #e0b84c;
+      color: #23273a;
+      padding: 0.8em 2em;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1.15em;
+      display: inline-block;
+      box-shadow: 0 0 16px 2px #bfa04655;
+      transition: background 0.2s, color 0.2s, box-shadow 0.3s;
+    }
+
+    .donate-btn:hover,
+    .donate-btn:focus {
+      background: #bfa046;
+      color: #fffbe6;
+      box-shadow: 0 0 24px 6px #bfa046aa;
+      text-decoration: none; /* Prevent underline on hover/focus */
+    }
+  </style>
+</BaseLayout>
+

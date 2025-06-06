@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServerStatus from '../components/ServerStatus.astro';
+---
+
+<BaseLayout title="Home">
+  <!-- Banner/Header -->
+  <div class="banner" style="
+    width: 100%;
+    min-height: 320px;
+    height: 320px;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Push content to the bottom */
+    position: relative;
+    border-bottom: 2px solid #bfa046;
+  ">
+    <h1 style="
+      font-family: 'Cinzel', serif;
+      color: #fffbe6;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 12px #000, 0 0 8px #bfa046;
+      margin-bottom: 0.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+    ">
+      THE SHATTERED CROWN
+    </h1>
+    <p style="
+      color: #fffbe6;
+      font-style: italic;
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 8px #000;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    ">
+      "Forge your destiny in a shattered world of magic and discover the mysteries the world has waiting for you."
+    </p>
+    <div style="
+      color: #fffbe6;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      text-shadow: 1px 1px 8px #000;
+      text-align: center;
+    ">
+      Server IP: <span style="color: #bfa046;">play.theshatteredcrown.com</span>
+    </div>
+  </div>
+
+  <ServerStatus />
+
+  <!-- Main Content -->
+  <div class="main-content" style="max-width: 900px; margin: 2.5rem auto 3.5rem auto; text-align: center;">
+    <!-- Place this just inside your main content or at the top of the page -->
+    <div id="dev-popup-overlay" class="dev-popup-overlay" onclick="if(event.target===this){this.style.display='none'}">
+      <div id="dev-popup" class="dev-popup" onclick="event.stopPropagation();">
+        🚧 This website is still in development. Expect bugs and glitches!
+        <button class="dev-popup-close" onclick="document.getElementById('dev-popup-overlay').style.display='none';">✕</button>
+      </div>
+    </div>
+
+    <p style="color: #fffbe6; font-size: 1.1rem; margin-bottom: 2.5rem;">
+      The Shattered Crown is a unique modded Minecraft server combining dark fantasy themes. Explore custom quests, massive builds, and an active community ready to conquer new challenges.
+    </p>
+
+    <h2 style="
+      color: #bfa046;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 1px;
+      margin-bottom: 1.2rem;
+      font-size: 2rem;
+      text-shadow: 1px 1px 8px #000;
+      text-align: center;
+    ">
+      LATEST NEWS
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: 1.2rem; align-items: center;">
+      <div class="news-box" style="background: #232733; border-radius: 0.7rem; padding: 1rem 1.5rem; text-align: left; max-width: 600px; width: 100%; border-left: 4px solid #bfa046;">
+        <strong style="color: #bfa046;">Server Updates</strong>
+        <div style="font-size: 0.9rem; color: #e0c97f;">June 7, 2025</div>
+        <div style="margin-top: 0.5rem; color: #fffbe6;">
+          We just launched a new update! Check it out! And if you find bugs or glitches, feel free to contact us
+          <a href="/contact" style="color: #e0c97f; text-decoration: underline;">here</a>.
+        </div>
+      </div>
+      <div class="news-box" style="background: #232733; border-radius: 0.7rem; padding: 1rem 1.5rem; text-align: left; max-width: 600px; width: 100%; border-left: 4px solid #bfa046;">
+        <strong style="color: #bfa046;">Events & Contests</strong>
+        <div style="font-size: 0.9rem; color: #e0c97f;"></div>
+        <div style="margin-top: 0.5rem; color: #fffbe6;"></div>
+      </div>
+      <div class="news-box" style="background: #232733; border-radius: 0.7rem; padding: 1rem 1.5rem; text-align: left; max-width: 600px; width: 100%; border-left: 4px solid #bfa046;">
+        <strong style="color: #bfa046;">Maintenance Notices</strong>
+        <div style="font-size: 0.9rem; color: #e0c97f;"></div>
+        <div style="margin-top: 0.5rem; color: #fffbe6;"></div>
+      </div>
+      <div class="news-box" style="background: #232733; border-radius: 0.7rem; padding: 1rem 1.5rem; text-align: left; max-width: 600px; width: 100%; border-left: 4px solid #bfa046;">
+        <strong style="color: #bfa046;">Community Highlights</strong>
+        <div style="font-size: 0.9rem; color: #e0c97f;"></div>
+        <div style="margin-top: 0.5rem; color: #fffbe6;"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+  .dev-popup-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(20, 20, 30, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dev-popup {
+    background: #232631;
+    color: #fffbe6;
+    border: 2px solid #bfa046;
+    border-radius: 12px;
+    padding: 2em 1.5em 2em 1.5em; /* reduced right padding */
+    font-size: 1.25em;
+    box-shadow: 0 8px 32px #000a;
+    max-width: 90vw;
+    text-align: center;
+    position: relative;
+    min-width: 350px;
+  }
+  .dev-popup-close {
+    background: none;
+    border: none;
+    color: #bfa046;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    top: -0.0em;   /* Move the button further up */
+    right: 0.1em;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+  }
+
+  .news-box {
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px 0 #0002;
+    cursor: pointer;
+  }
+  .news-box:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 6px 24px 0 #bfa04680, 0 2px 8px 0 #0004;
+  }
+
+  @media (max-width: 700px) {
+    .news-box {
+      max-width: 98vw;
+      padding: 1rem 0.7rem;
+      font-size: 0.98rem;
+    }
+    .banner {
+      min-height: 180px !important;
+      height: 180px !important;
+    }
+    h1 {
+      font-size: 2rem !important;
+    }
+    .banner > div,
+    .banner > p {
+      font-size: 0.95rem !important;
+    }
+    .banner {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    .main-content {
+      margin: 1.2rem auto 2rem auto !important;
+      padding: 0 0.5rem;
+    }
+  }
+  </style>
+</BaseLayout>

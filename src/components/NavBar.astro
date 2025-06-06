@@ -1,0 +1,226 @@
+<nav style="
+  background: #181c24;
+  border-bottom: 2px solid #bfa046;
+  padding: 0.5rem 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+">
+  <style>
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .nav-title {
+      color: #bfa046;
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-left: 1.5rem;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-right: 1.5rem;
+      width: 32px;
+      height: 32px;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: #bfa046;
+      border-radius: 2px;
+      transition: 0.3s;
+      display: block;
+      width: 100%;
+      position: absolute;
+      left: 0;
+    }
+
+    .hamburger span:nth-child(1) { top: 6px; }
+    .hamburger span:nth-child(2) { top: 14px; }
+    .hamburger span:nth-child(3) { top: 22px; }
+
+    .nav-links {
+      display: flex;
+      gap: 0.65rem; /* Increased gap between nav links */
+      list-style: none;
+      margin: 0 1.5rem 0 0;
+      padding: 0;
+      align-items: center;
+      transition: all 0.3s;
+    }
+
+    /* 🌟 New universal link styles for both desktop and mobile */
+    .nav-links a {
+      color: #bfa046;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: color 0.2s;
+      position: relative;
+      display: inline-block; /* Add this line */
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #bfa046;
+      background: none;
+    }
+
+    .nav-links a::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background: #bfa046;
+      border-radius: 2px;
+      width: 70%; /* Change from 100% to 70% for a shorter underline */
+      margin: 0 auto; /* Center the underline */
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 6px; /* Move underline up */
+      opacity: 1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    /* 📱 Mobile Navigation */
+    @media (max-width: 700px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        margin: 0;
+        background: #181c24;
+        border-top: 1px solid #bfa046;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        position: absolute;
+        left: 0;
+        top: 100%;
+        z-index: 99;
+      }
+
+      .nav-links li {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 1rem 1.5rem 0.5rem 1.5rem;
+        background: none;
+        border: none;
+        border-radius: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      #nav-toggle:checked ~ .nav-links {
+        display: flex !important;
+        max-height: 500px;
+      }
+
+      .nav-inner {
+        position: relative;
+      }
+
+      .nav-title {
+        margin-left: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      #nav-toggle:checked + label.hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      #nav-toggle:checked + label.hamburger span:nth-child(2) {
+        opacity: 0;
+      }
+
+      #nav-toggle:checked + label.hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    .nav-link {
+      color: #bfa046;
+      text-decoration: none;
+      margin: 0 1em;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #fffbe6;
+    }
+
+    .nav-btn {
+      color: #bfa046;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 2px solid #bfa046;
+      border-radius: 4px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background: #bfa046;
+      color: #181c24;
+    }
+  </style>
+
+  <div class="nav-inner">
+    <span class="nav-title">The Shattered Crown</span>
+    <input type="checkbox" id="nav-toggle" style="display:none;" />
+    <label for="nav-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <ul class="nav-links" id="nav-menu">
+      <li>
+        <a href="/" class={Astro.url.pathname === "/" ? "active" : ""}>Home</a>
+      </li>
+      <li>
+        <a href="/about" class={Astro.url.pathname === "/about" ? "active" : ""}>About</a>
+      </li>
+      <li>
+        <a href="/rules" class={Astro.url.pathname === "/rules" ? "active" : ""}>Rules</a>
+      </li>
+      <li>
+        <a href="/map" class={Astro.url.pathname === "/map" ? "active" : ""}>Map</a>
+      </li>
+      <li>
+        <a href="/donate" class={Astro.url.pathname === "/donate" ? "active" : ""}>Donate</a>
+      </li>
+      <li>
+        <a href="/contact" class={Astro.url.pathname === "/contact" ? "active" : ""}>Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>

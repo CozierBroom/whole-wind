@@ -1,0 +1,123 @@
+---
+/* No async code up here */
+---
+
+<style>
+  .status-dot-glow {
+    transition: filter 0.2s;
+  }
+  .status-dot-flash {
+    filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #fff) !important;
+  }
+  #server-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    font-weight: bold;
+    color: #bfa046;
+    padding: 0.7rem 0.5rem;
+    min-height: 3em;
+    background: #181c24;
+    border-bottom: 2px solid #bfa046;
+    width: 100%;
+    font-size: 1em;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    box-sizing: border-box;
+  }
+  .sep {
+    margin: 0 0.5em;
+    color: #bfa046;
+    user-select: none;
+  }
+  @media (max-width: 600px) {
+    #server-status {
+      gap: 0.5rem;
+      font-size: 0.98em;
+      padding: 0.7rem 0.2rem;
+      text-align: center;
+      flex-wrap: wrap; /* This allows wrapping if needed */
+    }
+    .sep {
+      display: inline;
+    }
+  }
+</style>
+
+<div id="server-status">
+  <span>
+    Server Status:
+    <span
+      id="status-dot"
+      class="status-dot-glow"
+      style="font-size: 1.4em; line-height: 1; vertical-align: middle; display: inline-block;"
+    >🟡</span>
+    <span id="status-text">Checking...</span>
+  </span>
+  <span class="sep">|</span>
+  <span>
+    Players Online: <span id="players">?</span>
+  </span>
+  <span class="sep">|</span>
+  <span>
+    Uptime: <span id="uptime">?</span>
+  </span>
+  <span class="sep">|</span>
+  <span>
+    Modpack <span id="modpack">?</span>
+  </span>
+</div>
+
+<script is:inline>
+  const serverIp = "aeon.aushost.gg:27000";
+  const modpack = "v1.0 (1.20.1)";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const statusDot = document.getElementById("status-dot");
+    if (statusDot) {
+      statusDot.style.filter = "drop-shadow(0 0 2px #ffe06680) drop-shadow(0 0 4px #ffe06680)";
+    }
+  });
+
+  async function fetchStatus() {
+    try {
+      const res = await fetch(`https://api.mcsrvstat.us/3/${serverIp}`);
+      const data = await res.json();
+
+      const statusDot = document.getElementById("status-dot");
+      const statusText = document.getElementById("status-text");
+      const players = document.getElementById("players");
+      const uptime = document.getElementById("uptime");
+      const modpackEl = document.getElementById("modpack");
+
+      if (data.online) {
+        statusDot.textContent = "🟢";
+        statusDot.style.filter = "drop-shadow(0 0 2px #00ff6680) drop-shadow(0 0 4px #00ff6680)";
+        statusText.textContent = "Online";
+        players.textContent = `${data.players?.online ?? 0}/${data.players?.max ?? 0}`;
+      } else {
+        statusDot.textContent = "🔴";
+        statusDot.style.filter = "drop-shadow(0 0 2px #ff444480) drop-shadow(0 0 4px #ff444480)";
+        statusText.textContent = "Offline";
+        players.textContent = "0/0";
+      }
+
+      uptime.textContent = "99.99%";
+      modpackEl.textContent = modpack;
+    } catch (e) {
+      const statusDot = document.getElementById("status-dot");
+      statusDot.textContent = "";
+      statusDot.style.filter = "none";
+      document.getElementById("status-text").textContent = "Error";
+      document.getElementById("players").textContent = "?";
+      document.getElementById("uptime").textContent = "99.99%";
+      document.getElementById("modpack").textContent = "?";
+    }
+  }
+
+  fetchStatus();
+  setInterval(fetchStatus, 30000);
+</script>
