@@ -24,3 +24,9 @@ a {
 a:hover {
   color: #00bfae;
 }
+
+nav a.active {
+  color: #bfa046;
+  border-bottom: 3px solid #bfa046;
+  text-decoration: none;
+}
