@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "theshatteredcrown.net"
+        }
+      ],
+      "destination": "https://www.theshatteredcrown.net",
+      "permanent": true
+    }
+  ]
+}
