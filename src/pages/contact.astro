@@ -2,12 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Contact Us" description="Get in touch with The Shattered Crown Minecraft server team.">
+<BaseLayout title="Contact Us  - The Shattered Crown" description="Get in touch with The Shattered Crown Minecraft server team.">
   <main>
     <h1>Contact Us</h1>
     <p>If you have any questions or want to get in touch, please fill out the form below or reach us through our social channels.</p>
 
-    <form id="contact-form" action="https://formsubmit.co/k.race03@hotmail.com" method="POST" novalidate>
+    <form id="contact-form" action="https://formspree.io/f/manjybkl" method="POST" novalidate>
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" aria-describedby="name-warning" />
       <div id="name-warning" class="input-warning" aria-live="polite">Please enter your name.</div>
@@ -34,7 +34,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <h2>Frequently Asked Questions</h2>
       <details>
         <summary>How long does it take to get a response?</summary>
-        <p>We usually respond within 24-48 hours on business days.</p>
+        <p>We usually respond within 1-2 hours if we arent busy.</p>
       </details>
       <details>
         <summary>Can I report a bug or issue with the server?</summary>
@@ -203,9 +203,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       cursor: pointer;
     }
     #faq details summary {
-      font-weight: 600;
+      font-weight: 700;
       outline: none;
       cursor: pointer;
+      color: #ffe28a; /* Lighter gold for better readability */
+      font-size: 1.1rem;
+      text-shadow: 0 1px 4px #181a20; /* Subtle shadow for contrast */
+      transition: color 0.2s;
+    }
+    #faq details summary:hover,
+    #faq details[open] summary {
+      color: #fffbe6; /* Even lighter on hover/open */
     }
     #faq details[open] {
       background: #2c3641;

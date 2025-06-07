@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <h1 class="page-title">Our Story</h1>
+  <div class="story-content">
+    <p>
+      Welcome to <strong>The Shattered Crown</strong>!<br>
+      Our world is steeped in legend, forged by the ambitions of kings and the dreams of adventurers.<br>
+      From humble beginnings, our community has grown into a realm where stories are written by every player.<br>
+      Join us as we continue to shape the fate of the kingdom together!
+    </p>
+  </div>
+  <style>
+    .page-title {
+      font-family: 'Cinzel', serif;
+      color: #bfa046;
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #23272f33;
+    }
+    .story-content {
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(rgba(24,28,36,0.92), rgba(24,28,36,0.92)), url('/stone.png');
+      background-size: 64px 64px;
+      background-repeat: repeat;
+      border: 2.5px solid #bfa046;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      color: #faf7f0;
+      font-size: 1.15rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  </style>
+</BaseLayout>

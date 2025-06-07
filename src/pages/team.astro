@@ -1,0 +1,83 @@
+---
+import '../styles/global.css';  
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+  <h1 class="page-title">Meet the Team</h1>
+  <ul class="team-list">
+    <li>
+      <img src="https://crafatar.com/avatars/7ad50fe5-2c58-4289-8083-8782c98f4bae" alt="KingRacer" class="team-avatar" />
+      <strong>CozierBroom4411</strong> – Server Owner
+    </li>
+    <li>
+      <img src="https://crafatar.com/avatars/7ad50fe5-2c58-4289-8083-8782c98f4bae" alt="LadyAstra" class="team-avatar" />
+      <strong></strong> – Community Manager
+    </li>
+    <li>
+      <img src="https://crafatar.com/avatars/7ad50fe5-2c58-4289-8083-8782c98f4bae" alt="SirPixel" class="team-avatar" />
+      <strong></strong> – Builder & Designer
+    </li>
+    <li>
+      <img src="https://crafatar.com/avatars/7ad50fe5-2c58-4289-8083-8782c98f4bae" alt="DameScript" class="team-avatar" />
+      <strong></strong> – Moderator
+    </li>
+  </ul>
+  <p class="team-desc">
+    Our dedicated team works tirelessly to create a magical experience for all. Feel free to reach out to us on Discord or in-game!
+  </p>
+  <style>
+    .page-title {
+      font-family: 'Cinzel', serif;
+      color: #bfa046;
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #23272f33;
+    }
+    .team-list {
+      max-width: 500px;
+      margin: 0 auto 2rem auto;
+      padding: 1.5rem 2rem;
+      background: linear-gradient(rgba(24,28,36,0.92), rgba(24,28,36,0.92)), url('/stone.png');
+      background-size: 64px 64px;
+      background-repeat: repeat;
+      border: 2.5px solid #bfa046;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      list-style: none;
+    }
+    .team-list li {
+      display: flex;
+      align-items: center;
+      color: #faf7f0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 1.15rem;
+      margin-bottom: 1rem;
+      padding-left: 0.5rem;
+      text-shadow: 0 1px 4px #23272f55;
+    }
+    .team-list li strong {
+      color: #d4af37;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.5px;
+    }
+    .team-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-right: 0.75rem;
+      vertical-align: middle;
+      border: 2px solid #bfa046;
+    }
+    .team-desc {
+      text-align: center;
+      color: #faf7f0;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 1px 4px #23272f55;
+    }
+  </style>
+</BaseLayout>

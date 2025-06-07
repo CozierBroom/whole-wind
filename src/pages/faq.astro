@@ -1,0 +1,101 @@
+---
+// filepath: c:\Users\krace\whole-wind\src\pages\faq.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout title="FAQ - The Shattered Crown" description="Frequently asked questions about The Shattered Crown Minecraft server.">
+  <main>
+    <h1>Frequently Asked Questions</h1>
+    <section>
+      <details>
+        <summary>How do I join the server?</summary>
+        <p>Connect to <strong>mc.theshatteredcrown.net</strong> in Minecraft Java Edition.</p>
+      </details>
+      <details>
+        <summary>Is there a Discord server?</summary>
+        <p>Yes! <a href="https://discord.gg/xKNrjb4fry" target="_blank" rel="noopener">Join our Discord here</a>.</p>
+      </details>
+      <details>
+        <summary>How can I donate?</summary>
+        <p>Visit our <a href="/donate">donate page</a> for more information.</p>
+      </details>
+      <details>
+        <summary>What version of Minecraft is the server?</summary>
+        <p>The server runs on the latest stable release of Minecraft Java Edition. Check our Discord for any version updates.</p>
+      </details>
+      <details>
+        <summary>Is the server cracked or premium?</summary>
+        <p>The Shattered Crown is a premium (online-mode) server. You need a legitimate Minecraft Java Edition account to join.</p>
+      </details>
+      <details>
+        <summary>Are there any rules I should know about?</summary>
+        <p>Yes! Please read our <a href="/rules">rules page</a> before playing to ensure a fun and fair experience for everyone.</p>
+      </details>
+      <details>
+        <summary>How do I report a player or issue?</summary>
+        <p>You can report issues or players directly to staff on our <a href="https://discord.gg/xKNrjb4fry" target="_blank" rel="noopener">Discord server</a>.</p>
+      </details>
+      <details>
+        <summary>Can I apply for staff?</summary>
+        <p>Staff applications open periodically. Watch the announcements channel on Discord for opportunities to apply.</p>
+      </details>
+      <details>
+        <summary>Is there a map of the world?</summary>
+        <p>
+          The map feature is currently <strong>temporarily unavailable</strong> as it is still being worked on.
+          <br />
+          Please check back soon for updates!
+        </p>
+      </details>
+      <details>
+        <summary>How can I contact the server team?</summary>
+        <p>
+          You can use our <a href="/contact">contact form</a> to send us a message directly, or reach out via our Discord server.
+        </p>
+      </details>
+      <!-- Add more questions as needed -->
+    </section>
+    <style>
+      section {
+        max-width: 600px;
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      details {
+        background: #23272f;
+        border-radius: 0.5rem;
+        padding: 1rem 1.2rem;
+        border: 1px solid #bfa046;
+        color: #f3f3f3;
+        font-size: 1.05rem;
+        transition: box-shadow 0.2s;
+      }
+      details[open] {
+        box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      }
+      summary {
+        color: #ffe28a; /* Lighter gold for better readability */
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-shadow: 0 1px 4px #181a20; /* Subtle shadow for contrast */
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+      details[open] summary,
+      summary:hover {
+        color: #fffbe6; /* Even lighter on hover/open */
+      }
+      details p {
+        margin: 0.5rem 0 0 0;
+      }
+      a {
+        color: #00bfae;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: #d49a2a;
+      }
+    </style>
+  </main>
+</BaseLayout>
