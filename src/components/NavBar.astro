@@ -1,8 +1,3 @@
----
-// filepath: c:\Users\krace\whole-wind\src\components\NavBar.astro
-const { pathname } = Astro.url;
----
-
 <nav style="
   background: #181c24;
   border-bottom: 2px solid #bfa046;
@@ -209,22 +204,22 @@ const { pathname } = Astro.url;
     </label>
     <ul class="nav-links" id="nav-menu">
       <li>
-        <a href="/" class={pathname === "/" ? "active" : ""}>Home</a>
+        <a href="/" class={Astro.url.pathname === "/" ? "active" : ""}>Home</a>
       </li>
       <li>
-        <a href="/about" class={pathname === "/about" ? "active" : ""}>About</a>
+        <a href="/about" class={Astro.url.pathname === "/about" ? "active" : ""}>About</a>
       </li>
       <li>
-        <a href="/rules" class={pathname === "/rules" ? "active" : ""}>Rules</a>
+        <a href="/rules" class={Astro.url.pathname === "/rules" ? "active" : ""}>Rules</a>
       </li>
       <li>
-        <a href="/map" class={pathname === "/map" ? "active" : ""}>Map</a>
+        <a href="/map" class={Astro.url.pathname === "/map" ? "active" : ""}>Map</a>
       </li>
       <li>
-        <a href="/donate" class={pathname === "/donate" ? "active" : ""}>Donate</a>
+        <a href="/donate" class={Astro.url.pathname === "/donate" ? "active" : ""}>Donate</a>
       </li>
       <li>
-        <a href="/contact" class={pathname === "/contact" ? "active" : ""}>Contact</a>
+        <a href="/contact" class={Astro.url.pathname === "/contact" ? "active" : ""}>Contact</a>
       </li>
     </ul>
   </div>
